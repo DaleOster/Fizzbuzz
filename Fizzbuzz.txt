@@ -1,0 +1,63 @@
+public static void Main(string[] args)
+{
+    while (true)
+    {
+        Console.WriteLine("If your number is divisible by 3, you will see, \"Fizz.\"");
+        Console.WriteLine("If your number is divisible by 5, you will see, \"Buzz.\"");
+        Console.WriteLine("If your number is divisible by both 3 and 5, you will see, \"Fizzbuzz.\"");
+        Console.WriteLine();
+        Console.Write("Please enter a number: ");
+        var number = Console.ReadLine();
+        int choice;
+        var validInput = int.TryParse(number, out choice);
+        if (validInput == true)
+        {
+            if (choice % 3 == 0 && choice % 5 == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Fizzbuzz");
+                Console.WriteLine();
+            }
+            else if (choice % 3 == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Fizz");
+                Console.WriteLine();
+            }
+            else if (choice % 5 == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Buzz");
+                Console.WriteLine();
+            }
+            else if (choice % 3 != 0 && choice % 5 != 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("That number is not divisible by 3 or 5.");
+                Console.WriteLine();
+            }
+            Console.WriteLine("Would you like to go again?");
+            Console.WriteLine("1) Yes");
+            Console.WriteLine("2) No");
+            Console.WriteLine();
+            var decision = Console.ReadLine();
+            if (decision == "1")
+            {
+                Console.WriteLine();
+                continue;
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Have a great day!");
+                break;
+            }
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("Please enter a valid number.");
+            Console.WriteLine();
+        }
+    }
+}
